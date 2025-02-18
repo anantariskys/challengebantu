@@ -2,7 +2,7 @@ import React from 'react'
 
 const ShareButton = () => {
     return (
-        <div className='flex flex-row gap-3 items-center mt-5'>
+        <div className='flex flex-row gap-3 items-center mt-5 flex-wrap'>
             Share this job: 
             <span className='flex flex-row items-center gap-2 cursor-pointer py-[12px] px-[16px] rounded-[4px] border border-[#CEE0F5] text-[#0A65CC]'>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
