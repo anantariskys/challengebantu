@@ -3,7 +3,7 @@ import React from 'react'
 const JobOverview = () => {
     return (
         <>
-            <div className='w-full h-[438px] border border-[#E7F0FA] rounded-[8px] p-[32px]'>
+            <div className='w-full h-auto border border-[#E7F0FA] rounded-[8px] p-[32px] max-sm:w-auto'>
                 <h1 className='text-[#191F33] text-[20px]'>Job Overview</h1>
 
                 <div className='flex flex-row flex-wrap gap-5 mt-[32px] text-[12px] cursor-default'>
