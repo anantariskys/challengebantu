@@ -24,13 +24,13 @@ const page = () => {
 
       {/* Header Title */}
       <header className='flex flex-row justify-between items-center px-[50px] max-sm:px-[20px] max-md:flex-col max-md:gap-5'>
-        <div className='max-w-[800px] min-h-[96px] flex flex-row gap-8'>
-          <div className='max-w-[96px] max-h-[96px] rounded-full'>
+        <div className='max-w-[800px] min-h-[96px] flex flex-row gap-8 items-center'>
+          <div className='max-w-[96px] max-h-[96px] max-sm:max-w-[100px] max-sm:max-h-[100px] rounded-full'>
             <img src="/images/sample_icon.png" alt="" />
           </div>
 
           <div className='flex flex-col gap-2 justify-center'>
-            <div className='font-weight-[500] text-[24px] font-semibold flex flex-row flex-wrap items-center'>
+            <div className='font-weight-[500] text-[24px] max-sm:text-[20px] font-semibold flex flex-row flex-wrap items-center'>
               Senior UX Designer
               <span className='ml-3 text-[14px] font-w-400 text-[#FF4F4F] bg-[#FFEDED] rounded-[52px] py-[3px] px-[12px]'>Featured</span>
               <span className='ml-3 text-[14px] font-w-400 text-[#0066FF] bg-[#E8F1FF] rounded-[52px] py-[3px] px-[12px]'>Full Time</span>
@@ -38,7 +38,7 @@ const page = () => {
 
             <div className='text-[#767F8C] flex flex-row gap-5 max-md:gap-2 flex-wrap'>
               {/* URL company */}
-              <div className='flex flex-row gap-1 text-[16px] text-[#474C54]'>
+              <div className='flex flex-row gap-1 text-[16px] max-sm:text-[14px] text-[#474C54]'>
                 <span>
                   <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.33334 11.3332C8.69121 11.8117 9.1478 12.2075 9.67213 12.494C10.1965 12.7805 10.7763 12.9508 11.3722 12.9935C11.9682 13.0362 12.5663 12.9502 13.1261 12.7414C13.6859 12.5326 14.1943 12.2058 14.6167 11.7832L17.1167 9.28322C17.8757 8.49738 18.2956 7.44487 18.2861 6.35238C18.2767 5.2599 17.8384 4.21485 17.0659 3.44231C16.2934 2.66978 15.2483 2.23157 14.1558 2.22208C13.0634 2.21259 12.0108 2.63256 11.225 3.39156L9.79167 4.81656" stroke="#0066FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -49,7 +49,7 @@ const page = () => {
               </div>
 
               {/* Phone number */}
-              <div className='flex flex-row gap-1 text-[16px] text-[#474C54]'>
+              <div className='flex flex-row gap-1 text-[16px] max-sm:text-[14px] text-[#474C54]'>
                 <span>
                   <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_2202_16974)">
@@ -66,7 +66,7 @@ const page = () => {
               </div>
               
               {/* Email */}
-              <div className='flex flex-row gap-1 text-[16px] text-[#474C54]'>
+              <div className='flex flex-row gap-1 text-[16px] max-sm:text-[14px] text-[#474C54]'>
                 <span>
                   <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 5.75L12 14L3 5.75" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -82,11 +82,11 @@ const page = () => {
           </div>
         </div>
 
-        <div className='h-[96px] w-[50%] flex flex-col justify-between'>
+        <div className='h-[96px] max-sm:w-[80%] flex flex-col justify-between'>
           {/* button */}
           <div className='flex flex-row gap-3 justify-end'>
             {/* Save job button */}
-            <div className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#0A65CC] group duration-150 delay-150'>
+            <div className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#acd3ff] group duration-150 delay-150'>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="#E7F0FA" className="group-hover:fill-[#0A65CC]" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:fill-[#E7F0FA] duration-150 delay-150"/>
               </svg>
@@ -94,7 +94,7 @@ const page = () => {
 
             {/* Apply button */}
             <div className='rounded-[4px] bg-[#042852] py-[16px] px-[36px]  cursor-pointer group max-sm:w-full'>
-              <span className='text-white flex flex-row gap-3 group-hover:ease-in-out hover:translate-1 hover:scale-110'>
+              <span className='text-white flex flex-row max-sm:justify-end gap-3 group-hover:ease-in-out hover:translate-1 hover:scale-110'>
                 Apply Now
                 <span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,17 +117,17 @@ const page = () => {
         {/* Job description */}
         <section className='w-full'>
           <div className='flex flex-col gap-5'>
-            <h1 className='font-weight-[500] text-[18px] font-medium'>
+            <h1 className='font-weight-[500] text-[18px] max-sm:text-[16px] font-medium'>
               Job Description
             </h1>
-            <p className='text-[16px] text-[#5E6670] whitespace-pre-line [&>*]:mb-4'>
+            <p className='text-[16px] text-[#5E6670] max-sm:text-[14px] whitespace-pre-line [&>*]:mb-4'>
               Integer aliquet pretium consequat. Donec et sapien id leo accumsan pellentesque eget maximus tellus. Duis et est ac leo rhoncus tincidunt vitae vehicula augue. Donec in suscipit diam. Pellentesque quis justo sit amet arcu commodo sollicitudin. Integer finibus blandit condimentum. Vivamus sit amet ligula ullamcorper, pulvinar ante id, tristique erat. Quisque sit amet aliquam urna. Maecenas blandit felis id massa sodales finibus. Integer bibendum eu nulla eu sollicitudin. Sed lobortis diam tincidunt accumsan faucibus. Quisque blandit augue quis turpis auctor, dapibus euismod ante ultricies. Ut non felis lacinia turpis feugiat euismod at id magna. Sed ut orci arcu. Suspendisse sollicitudin faucibus aliquet.
             </p>
-            <p className='text-[16px] text-[#5E6670]'>
+            <p className='text-[16px] text-[#5E6670] max-sm:text-[14px]'>
               Nam dapibus consectetur erat in euismod. Cras urna augue, mollis venenatis augue sed, porttitor aliquet nibh. Sed tristique dictum elementum. Nulla imperdiet sit amet quam eget lobortis. Etiam in neque sit amet orci interdum tincidunt.
             </p>
 
-            <h1 className='font-weight-[500] text-[18px] font-medium'>
+            <h1 className='font-weight-[500] text-[18px] max-sm:text-[16px] font-medium'>
               Responsibilites
             </h1>
             <ul className='text-[16px] text-[#5E6670]'>
