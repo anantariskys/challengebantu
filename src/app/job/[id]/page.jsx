@@ -86,9 +86,9 @@ const page = () => {
           {/* button */}
           <div className='flex flex-row gap-3 justify-end'>
             {/* Save job button */}
-            <div className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#0A65CC] group duration-500 delay-500'>
+            <div className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#0A65CC] group duration-150 delay-150'>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="#E7F0FA" className="group-hover:fill-[#0A65CC]" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:fill-[#E7F0FA] duration-500 delay-500"/>
+                <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:fill-[#E7F0FA] duration-150 delay-150"/>
               </svg>
             </div>
 
@@ -107,7 +107,7 @@ const page = () => {
           </div>
           {/* expire job date */}
           <div className='self-end text-[14px]'>
-            <span className='text-[#767F8C]'>Job expire in:</span> <span className='text-[#E05151]'>June 30, 2021</span>
+            <span className='text-[#767F8C]'>Job expire in:</span> <span className='text-[#E05151]'>July 14, 2024</span>
           </div>
         </div>
       </header>
