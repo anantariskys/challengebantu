@@ -1,4 +1,7 @@
 'use client'
+import CompanyDetail from '@/components/companyDetail'
+import JobOverview from '@/components/jobOverview'
+import ShareButton from '@/components/shareButton'
 import { useParams } from 'next/navigation'
 import React from 'react'
 
@@ -9,7 +12,7 @@ const page = () => {
     <div className='flex flex-col gap-10'>
 
       {/* Header */}
-      <div className='flex flex-row justify-between items-center py-[24px] px-[24px] bg-[#F1F2F4]'>
+      <div className='flex flex-row justify-between items-center py-[24px] px-[50px] bg-[#F1F2F4]'>
         <div className='font-weight-[500] text-[18px]'>
           Job Details
         </div>
@@ -20,14 +23,14 @@ const page = () => {
       </div>
 
       {/* Header Title */}
-      <header className='flex flex-row justify-between items-center px-[24px]'>
+      <header className='flex flex-row justify-between items-center px-[50px]'>
         <div className='max-w-[800px] min-h-[96px] flex flex-row gap-8'>
           <div className='max-w-[96px] max-h-[96px] rounded-full'>
             <img src="/images/sample_icon.png" alt="" />
           </div>
 
-          <div className='flex flex-col gap-1 justify-center'>
-            <div className='font-weight-[500] text-[24px]'>
+          <div className='flex flex-col gap-2 justify-center'>
+            <div className='font-weight-[500] text-[24px] font-semibold'>
               Senior UX Designer
               <span className='ml-3 text-[14px] font-w-400 text-[#FF4F4F] bg-[#FFEDED] rounded-[52px] py-[3px] px-[12px]'>Featured</span>
               <span className='ml-3 text-[14px] font-w-400 text-[#0066FF] bg-[#E8F1FF] rounded-[52px] py-[3px] px-[12px]'>Full Time</span>
@@ -83,20 +86,22 @@ const page = () => {
           {/* button */}
           <div className='flex flex-row gap-3 justify-end'>
             {/* Save job button */}
-            <div className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer'>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <div className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#0A65CC] group duration-500 delay-500'>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#E7F0FA" className="group-hover:fill-[#0A65CC]" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:fill-[#E7F0FA] duration-500 delay-500"/>
               </svg>
             </div>
 
             {/* Apply button */}
-            <div className='rounded-[4px] bg-[#042852] py-[16px] px-[36px] text-white flex flex-row gap-3 cursor-pointer'>
-              Apply Now
-              <span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+            <div className='rounded-[4px] bg-[#042852] py-[16px] px-[36px]  cursor-pointer group'>
+              <span className='text-white flex flex-row gap-3 group-hover:ease-in-out hover:translate-1 hover:scale-110'>
+                Apply Now
+                <span>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </span>
             </div>
           </div>
@@ -106,6 +111,47 @@ const page = () => {
           </div>
         </div>
       </header>
+
+      {/* Body */}
+      <div className='w-full flex flex-row px-[50px] gap-10'>
+        {/* Job description */}
+        <section className='w-full'>
+          <div className='flex flex-col gap-5'>
+            <h1 className='font-weight-[500] text-[18px] font-medium'>
+              Job Description
+            </h1>
+            <p className='text-[16px] text-[#5E6670] whitespace-pre-line [&>*]:mb-4'>
+              Integer aliquet pretium consequat. Donec et sapien id leo accumsan pellentesque eget maximus tellus. Duis et est ac leo rhoncus tincidunt vitae vehicula augue. Donec in suscipit diam. Pellentesque quis justo sit amet arcu commodo sollicitudin. Integer finibus blandit condimentum. Vivamus sit amet ligula ullamcorper, pulvinar ante id, tristique erat. Quisque sit amet aliquam urna. Maecenas blandit felis id massa sodales finibus. Integer bibendum eu nulla eu sollicitudin. Sed lobortis diam tincidunt accumsan faucibus. Quisque blandit augue quis turpis auctor, dapibus euismod ante ultricies. Ut non felis lacinia turpis feugiat euismod at id magna. Sed ut orci arcu. Suspendisse sollicitudin faucibus aliquet.
+            </p>
+            <p className='text-[16px] text-[#5E6670]'>
+              Nam dapibus consectetur erat in euismod. Cras urna augue, mollis venenatis augue sed, porttitor aliquet nibh. Sed tristique dictum elementum. Nulla imperdiet sit amet quam eget lobortis. Etiam in neque sit amet orci interdum tincidunt.
+            </p>
+
+            <h1 className='font-weight-[500] text-[18px] font-medium'>
+              Responsibilites
+            </h1>
+            <ul className='text-[16px] text-[#5E6670]'>
+              <li>• Quisque semper gravida est et consectetur.</li>
+              <li>• Curabitur blandit lorem velit, vitae pretium leo placerat eget.</li>
+              <li>• Morbi mattis in ipsum ac tempus.</li>
+              <li>• Curabitur eu vehicula libero. Vestibulum sed purus ullamcorper, lobortis lectus nec.</li>
+              <li>• vulputate turpis. Quisque ante odio, iaculis a porttitor sit amet.</li>
+              <li>• lobortis vel lectus. Nulla at risus ut diam.</li>
+              <li>• commodo feugiat. Nullam laoreet, diam placerat dapibus tincidunt.</li>
+              <li>• odio metus posuere lorem, id condimentum erat velit nec neque.</li>
+            </ul>
+          </div>
+
+          {/* Share */}
+          <ShareButton />
+        </section>
+
+        {/* Job Overview & Company detail */}
+        <section className='w-[536px] max-w-[536px] flex flex-col gap-5'>
+          <JobOverview />
+          <CompanyDetail /> 
+        </section>
+      </div>
     </div>
   )
 }
