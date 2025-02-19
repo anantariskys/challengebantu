@@ -3,10 +3,13 @@ import CompanyDetail from '@/components/companyDetail'
 import JobOverview from '@/components/jobOverview'
 import ShareButton from '@/components/shareButton'
 import { useParams } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
+import swal from 'sweetalert2'
 
 const page = () => {
-  // const {id} = useParams()
+  const {id} = useParams()
+  const [saved, setSaved] = useState(false)
+  const [applied, setApplied] = useState(false)
 
   return (
     <div className='flex flex-col gap-10'>
@@ -18,7 +21,7 @@ const page = () => {
         </div>
 
         <div>
-          <span className='text-[#767F8C]'>Home / Find Job / </span> Job Details
+          <span className='text-[#767F8C]'> Home / Find Job / </span> Job Details
         </div>
       </div>
 
@@ -45,7 +48,7 @@ const page = () => {
                     <path d="M11.6667 9.66677C11.3088 9.18833 10.8522 8.79245 10.3279 8.50599C9.80355 8.21953 9.22374 8.04918 8.62779 8.00649C8.03184 7.96381 7.43368 8.0498 6.87388 8.25862C6.31408 8.46744 5.80574 8.79421 5.38333 9.21677L2.88333 11.7168C2.12434 12.5026 1.70436 13.5551 1.71386 14.6476C1.72335 15.7401 2.16155 16.7851 2.93409 17.5577C3.70662 18.3302 4.75167 18.7684 5.84416 18.7779C6.93665 18.7874 7.98916 18.3674 8.775 17.6084L10.2 16.1834" stroke="#0066FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <a href="https://instagram.com">https://instagram.com</a> 
+                <a href="https://instagram.com" target='__blank'>https://instagram.com</a> 
               </div>
 
               {/* Phone number */}
@@ -86,22 +89,54 @@ const page = () => {
           {/* button */}
           <div className='flex flex-row gap-3 justify-end'>
             {/* Save job button */}
-            <div className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#acd3ff] group duration-150 delay-150'>
+            <div onClick={ () => setSaved(!saved) } className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#acd3ff] group duration-150 delay-150'>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="#E7F0FA" className="group-hover:fill-[#0A65CC]" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:fill-[#E7F0FA] duration-150 delay-150"/>
+                <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={`group-hover:fill-[#E7F0FA] ${ saved ? 'fill-[#0A65CC]' : ''} duration-150 delay-150`}/>
               </svg>
             </div>
 
             {/* Apply button */}
-            <div className='rounded-[4px] bg-[#042852] py-[16px] px-[36px]  cursor-pointer group max-sm:w-full'>
-              <span className='text-white flex flex-row max-sm:justify-end gap-3 group-hover:ease-in-out hover:translate-1 hover:scale-110'>
-                Apply Now
+            <div onClick={ () => {
+                setApplied(!applied)
+                !applied ? 
+                new swal({
+                  title: 'Terms and conditions',
+                  input: 'checkbox',
+                  inputValue: 1,
+                  inputPlaceholder:
+                    'I agree with the terms and conditions',
+                  confirmButtonText:
+                    'Continue <i class="fa fa-arrow-right></i>',
+                  inputValidator: function (result) {
+                    return new Promise(function (resolve, reject) {
+                      if (result) {
+                        resolve()
+                      } else {
+                        reject('You need to agree with T&C')
+                      }
+                    })
+                  }
+                }).then(function (result) {
+                  new swal({
+                    type: 'success',
+                    text: 'You agreed with T&C :)'
+                  })
+                })
+                : ''
+                	
+              }} 
+              className={`rounded-[4px] ${!applied ? 'bg-[#042852]' : 'bg-[#8a8a8a]'} py-[16px] px-[36px]  cursor-pointer group max-sm:w-full`}>
+              <span className={`text-white flex flex-row max-sm:justify-end gap-3 ${!applied ? 'group-hover:ease-in-out hover:translate-1 hover:scale-110' : ''} `}>
+                { applied ? 'Applied' : 'Apply Now' }
+
+                { !applied && 
                 <span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
+                }
               </span>
             </div>
           </div>

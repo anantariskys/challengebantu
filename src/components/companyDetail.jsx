@@ -42,7 +42,7 @@ const CompanyDetail = () => {
                     </p>
                     <p className='flex flex-row justify-between'>
                         <span className='text-[#5E6670]'>Website:</span>
-                        <span>https://twitter.com</span>
+                        <span><a href="https://twitter.com" target='__blank'>https://twitter.com</a></span>
                     </p>
                 </div>
 
