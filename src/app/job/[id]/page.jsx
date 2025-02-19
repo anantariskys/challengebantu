@@ -5,14 +5,42 @@ import ShareButton from '@/components/shareButton'
 import { useParams } from 'next/navigation'
 import React, { useState } from 'react'
 import swal from 'sweetalert2'
+import { Flip, ToastContainer, toast } from 'react-toastify';
 
 const page = () => {
   const {id} = useParams()
   const [saved, setSaved] = useState(false)
   const [applied, setApplied] = useState(false)
 
+  const notify = () => toast.success('Saved!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Flip,
+    })
+
   return (
     <div className='flex flex-col gap-10'>
+
+      {/* Toastify for saved job */}
+      <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick={false}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+      transition={Flip}
+      />
 
       {/* Header */}
       <div className='flex flex-row justify-between items-center py-[24px] px-[50px] max-sm:px-[20px] bg-[#F1F2F4]'>
@@ -89,7 +117,11 @@ const page = () => {
           {/* button */}
           <div className='flex flex-row gap-3 justify-end'>
             {/* Save job button */}
-            <div onClick={ () => setSaved(!saved) } className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#acd3ff] group duration-150 delay-150'>
+            <div onClick={ () => {
+                setSaved(!saved)
+                !saved ? notify() : ''
+              } } 
+              className='rounded-[4px] bg-[#E7F0FA] p-[16px] cursor-pointer hover:bg-[#acd3ff] group duration-150 delay-150'>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="#E7F0FA" className="group-hover:fill-[#0A65CC]" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 21L11.9993 17.25L6 21V4.5C6 4.30109 6.07902 4.11032 6.21967 3.96967C6.36032 3.82902 6.55109 3.75 6.75 3.75H17.25C17.4489 3.75 17.6397 3.82902 17.7803 3.96967C17.921 4.11032 18 4.30109 18 4.5V21Z" stroke="#0A65CC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={`group-hover:fill-[#E7F0FA] ${ saved ? 'fill-[#0A65CC]' : ''} duration-150 delay-150`}/>
               </svg>
