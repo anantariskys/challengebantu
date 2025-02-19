@@ -28,35 +28,23 @@ const page = () => {
     <div className='flex flex-col gap-10'>
 
       {/* Toastify for saved job */}
-      <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick={false}
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-      transition={Flip}
-      />
+      <ToastContainer/>
 
       {/* Header */}
       <div className='flex flex-row justify-between items-center py-[24px] px-[50px] max-sm:px-[20px] bg-[#F1F2F4]'>
-        <div className='font-weight-[500] text-[18px] max-sm:hidden'>
+        <div className='font-weight-[500] text-[18px] max-sm:hidden select-none'>
           Job Details
         </div>
 
         <div>
-          <span className='text-[#767F8C]'> Home / Find Job / </span> Job Details
+          <span className='text-[#767F8C]'> <a href="/">Home</a> / <a href="/job">Find Job</a> / </span> <a href={`/job/${id}`}>Job Details</a>
         </div>
       </div>
 
       {/* Header Title */}
       <header className='flex flex-row justify-between items-center px-[50px] max-sm:px-[20px] max-md:flex-col max-md:gap-5'>
         <div className='max-w-[800px] min-h-[96px] flex flex-row gap-8 items-center'>
-          <div className='max-w-[96px] max-h-[96px] max-sm:max-w-[100px] max-sm:max-h-[100px] rounded-full'>
+          <div className='max-w-[96px] max-h-[96px] max-sm:max-w-[100px] max-sm:max-h-[100px] rounded-full select-none'>
             <img src="/images/sample_icon.png" alt="" />
           </div>
 
@@ -129,7 +117,7 @@ const page = () => {
 
             {/* Apply button */}
             <div onClick={ () => {
-                setApplied(!applied)
+                // setApplied(!applied)
                 !applied ? 
                 new swal({
                   title: 'Terms and conditions',
@@ -152,13 +140,13 @@ const page = () => {
                   new swal({
                     type: 'success',
                     text: 'You agreed with T&C :)'
-                  })
+                  }).then(() => setApplied(!applied))
                 })
-                : ''
-                	
+                : '';
+                applied === true ? setApplied(false) : ''
               }} 
               className={`rounded-[4px] ${!applied ? 'bg-[#042852]' : 'bg-[#8a8a8a]'} py-[16px] px-[36px]  cursor-pointer group max-sm:w-full`}>
-              <span className={`text-white flex flex-row max-sm:justify-end gap-3 ${!applied ? 'group-hover:ease-in-out hover:translate-1 hover:scale-110' : ''} `}>
+              <span className={`text-white select-none flex flex-row max-sm:justify-end gap-3 ${!applied ? 'group-hover:ease-in-out hover:translate-1 hover:scale-110' : ''} `}>
                 { applied ? 'Applied' : 'Apply Now' }
 
                 { !applied && 
