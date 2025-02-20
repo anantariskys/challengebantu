@@ -1,12 +1,13 @@
 import React from 'react'
 
-const JobOverview = () => {
+const JobOverview = ({ jobDataId }) => {
+
     return (
         <>
             <div className='w-full h-auto border border-[#E7F0FA] rounded-[8px] p-[32px] max-sm:w-auto'>
                 <h1 className='text-[#191F33] text-[20px] max-sm:text-center'>Job Overview</h1>
 
-                <div className='flex flex-row flex-wrap gap-5 mt-[32px] text-[12px] cursor-default'>
+                <div className='flex flex-row flex-wrap gap-3 mt-[32px] text-[12px] cursor-default'>
                     {/* Job Posted */}
                     <div className='min-w-[78px]'>
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +18,7 @@ const JobOverview = () => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>JOB POSTED:</p>
-                    <p className='mt-1'>14 June 2024</p>
+                    <p className='mt-1'>{ new Date(jobDataId.createdAt).toLocaleDateString('en-EN') }</p>
                     </div>
                     {/* Job Expire */}
                     <div className='min-w-[78px]'>
@@ -28,7 +29,7 @@ const JobOverview = () => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>JOB EXPIRE IN:</p>
-                    <p className='mt-1'>14 July 2024</p>
+                    <p className='mt-1'>{ new Date(jobDataId.expired_at).toLocaleDateString('en-EN') }</p>
                     </div>
                     {/* Education */}
                     <div className='min-w-[78px]'>
@@ -47,7 +48,7 @@ const JobOverview = () => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>EDUCATION:</p>
-                    <p className='mt-1'>Graduation</p>
+                    <p className='mt-1'> { jobDataId.education ? 'Graduation' : 'Undergraduate'} </p>
                     </div>
                     {/* Experience */}
                     <div className='min-w-[78px]'>
@@ -66,7 +67,7 @@ const JobOverview = () => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>EXPERIENCE:</p>
-                    <p className='mt-1'>3-5 Years</p>
+                    <p className='mt-1'>{ jobDataId.experience >= 12 ? Math.floor(jobDataId.experience/12) : jobDataId.experience } Years</p>
                     </div>
                     {/* Job type */}
                     <div className='min-w-[78px]'>
@@ -85,7 +86,7 @@ const JobOverview = () => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>JOB TYPE:</p>
-                    <p className='mt-1'>Full Time</p>
+                    <p className='mt-1'>{ jobDataId.job_type }</p>
                     </div>
                     {/* Location */}
                     <div className='min-w-[78px] max-w-[78px]'>
@@ -96,7 +97,7 @@ const JobOverview = () => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>LOCATION:</p>
-                    <p className='mt-1'>Jakarta, Indonesia</p>
+                    <p className='mt-1'>{ jobDataId.location }</p>
                     </div>
                     {/* Salary */}
                     <div className='min-w-[78px]'>
@@ -106,7 +107,7 @@ const JobOverview = () => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>SALARY:</p>
-                    <p className='mt-1'>Rp 3.5jt - 5.5jt/month</p>
+                    <p className='mt-1'>$ { jobDataId.salary }/month</p>
                     </div>
                 </div>
             </div>

@@ -1,20 +1,18 @@
 import React from 'react'
 
-const CompanyDetail = () => {
+const CompanyDetail = ({ jobDataId, formatDate }) => {
     return(
         <>
             <div className='w-full h-[438px] border border-[#E7F0FA] rounded-[8px] p-[32px]'>
                 <div className='flex gap-5'>
-                    <div className='max-w-[64px] max-h-[64px]'>
-                        <img src="/images/sample_logo.png" alt="" />
-                    </div>
+                    <img src={ jobDataId.image } alt={ `logo ${jobDataId.name}` } className='max-w-[64px] max-h-[64px] rounded-md' />
 
                     <div className='flex flex-col gap-2 '>
                         <p className='text-[20px] text-[#18191C]'>
-                            Instagram
+                            { jobDataId.name }
                         </p>
                         <p className='text-[14px] text-[#767F8C]'>
-                            Social networking service
+                            { jobDataId.category }
                         </p>
                     </div>
                 </div>
@@ -22,27 +20,27 @@ const CompanyDetail = () => {
                 <div className='flex flex-col text-[14px] mt-7 gap-3'>
                     <p className='flex flex-row justify-between'>
                         <span className='text-[#5E6670]'>Founded in:</span>
-                        <span>March 21, 2006</span>
+                        <span>{ formatDate(jobDataId.founded_in) }</span>
                     </p>
                     <p className='flex flex-row justify-between'>
                         <span className='text-[#5E6670]'>Organization type:</span>
-                        <span>Private Company</span>
+                        <span> { jobDataId.organization_type ? 'Public Company' : 'Private Company' } </span>
                     </p>
                     <p className='flex flex-row justify-between'>
                         <span className='text-[#5E6670]'>Company size:</span>
-                        <span>120-300 Employers</span>
+                        <span> { jobDataId.company_size } Employers</span>
                     </p>
                     <p className='flex flex-row justify-between'>
                         <span className='text-[#5E6670]'>Phone:</span>
-                        <span>(406) 555-0120</span>
+                        <span> { jobDataId.telephone_number } </span>
                     </p>
                     <p className='flex flex-row justify-between'>
                         <span className='text-[#5E6670]'>Email:</span>
-                        <span>twitter@gmail.com</span>
+                        <span> { jobDataId.email } </span>
                     </p>
                     <p className='flex flex-row justify-between'>
                         <span className='text-[#5E6670]'>Website:</span>
-                        <span><a href="https://twitter.com" target='__blank'>https://twitter.com</a></span>
+                        <span><a href={ jobDataId.url } target='__blank'>{ jobDataId.url }</a></span>
                     </p>
                 </div>
 
