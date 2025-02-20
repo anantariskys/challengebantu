@@ -11,7 +11,7 @@ const SearchSection = () => {
         </div>
         <div className="flex items-center border p-2 rounded-md gap-1 md:p-4 lg:gap-4 lg:px-6 lg:w-[668px]">
           <div className="flex items-center gap-1 border-r">
-            <img src="india.png" alt="flag" className="w-4 md:w-6" />
+            <img src="/india.png" alt="flag" className="w-4 md:w-6" />
             <p className="font-semibold text-xs md:text-sm">India</p>
             <Icon icon={"mdi:chevron-down"} className=" lg:size-6" />
           </div>
@@ -23,7 +23,7 @@ const SearchSection = () => {
       </div>
       <div className="hidden md:flex md:items-center md:gap-2">
         <Icon icon={"mdi:bell-outline"} className="size-6" />
-        <img src="user.png" alt="user" className="md:size-8 lg:size-12" />
+        <img src="/user.png" alt="user" className="md:size-8 lg:size-12" />
       </div>
     </div>
   );
