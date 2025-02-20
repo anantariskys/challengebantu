@@ -10,16 +10,14 @@
   },
   "dependencies": {
     "@iconify/react": "^5.2.0",
+    "@splidejs/react-splide": "^0.7.12",
     "axios": "^1.7.9",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-
     "react-paginate": "^8.3.0",
-
     "react-toastify": "^11.0.3",
     "sweetalert2": "^11.17.2",
-
     "zustand": "^5.0.3"
   },
   "devDependencies": {
