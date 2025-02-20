@@ -1,9 +1,9 @@
-const { default: axios } = require("axios");
+import axios from "axios"
 
 
 const core = axios.create(
     {
-        baseURL: ""  //nunggu mock api
+        baseURL: "https://67b13a313fc4eef538e9667f.mockapi.io/api"  
     }
 )
 

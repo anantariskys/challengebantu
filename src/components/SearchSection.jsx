@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 const SearchSection = () => {
   return (
-    <div className="max-w-[1320px] mx-auto p-4 flex justify-between items-center md:py-6 lg:px-0">
+    <div className="container  py-4 flex justify-between items-center ">
       <div className="flex items-center gap-1 md:gap-4">
         <div className="flex items-center gap-1 ">
           <Icon icon={"tabler:briefcase"} className="text-blue-500 size-6 md:size-10" />

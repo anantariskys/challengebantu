@@ -3,13 +3,13 @@ export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#0A65CC"
       },
     },
     container:{
@@ -20,6 +20,13 @@ export default {
         lg: "4rem",
         xl: "5rem",
         "2xl": "6rem",
+      },
+      screens: {
+        sm: "600px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1240px",
+    
       }
     }
   },

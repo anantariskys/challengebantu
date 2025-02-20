@@ -1,10 +1,13 @@
 'use client'
+
+  import { Icon } from "@iconify/react";
+  import { useParams } from 'next/navigation'
+
 import { Icon } from "@iconify/react";
 import CompanyDetail from '@/components/companyDetail'
 import JobOverview from '@/components/jobOverview'
 import ShareButton from '@/components/shareButton'
-import { useParams } from 'next/navigation'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import swal from 'sweetalert2'
 import { Flip, ToastContainer, toast } from 'react-toastify';
 
