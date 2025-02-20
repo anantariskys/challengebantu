@@ -5,14 +5,14 @@ import SearchGroup from "./components/SearchGroup";
 import LiveCount from "./components/LiveCount";
 const Hero = () => {
   return (
-    <header className="min-h-screen bg-[#F1F2F4]  ">
-      <main className="container w-full min-h-screen flex items-center justify-center">
-        <div className="flex  md:flex-row flex-col gap-4 items-center justify-between w-full">
+    <header className=" bg-[#F1F2F4]  ">
+      <main className="container w-full min-h-[50vh] py-8 flex items-center justify-center">
+        <div className="flex  md:flex-row flex-col md:gap-4 gap-12 items-center justify-between w-full">
           <div className="max-w-2xl w-full space-y-3 ">
-            <h1 className="text-5xl font-medium">
+            <h1 className="text-4xl font-medium">
               Temukan Pekerjaan yang Sesuai dengan Minat & Keahlian Anda
             </h1>
-            <p>
+            <p className="text-sm">
               Menemukan pekerjaan yang sesuai dengan keterampilan dan minat Anda
               adalah langkah penting dalam membangun karier yang sukses.
             </p>
@@ -23,7 +23,7 @@ const Hero = () => {
               Animation.
             </small>
           </div>
-          <div className="w-full  max-w-xl">
+          <div className="w-full  max-w-md">
             <Image
               src={HeroIMG}
               alt="hero-img"
