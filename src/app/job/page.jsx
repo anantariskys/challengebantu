@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import FindJobSection from "./FindJobSection";
-import SearchSection from "./SearchSection";
+import SearchSection from "../../components/SearchSection";
 import JobCard from "./JobCard";
 import CategorySection from "./CategorySection";
 import ReactPaginate from "react-paginate";
@@ -9,9 +9,8 @@ import ReactPaginate from "react-paginate";
 const page = () => {
   return (
     <div>
-      <SearchSection />
       <FindJobSection />
-      <div className="max-w-[1320px] mx-auto p-4 md:py-6 lg:px-0 lg:py-8">
+      <div className="container  md:py-6  lg:py-8">
         <CategorySection />
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3  lg:gap-6">
           <JobCard />
