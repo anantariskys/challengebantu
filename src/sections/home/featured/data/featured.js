@@ -1,0 +1,58 @@
+const featured = [
+  {
+    title: "Senior UX Designer",
+    employment_type: "Contract Base",
+    location: "Australia",
+    salary: "$30K-$35K",
+    time_remaining: "4 Days Remaining",
+    company_logo: "Upwork",
+    apply_link: "#",
+  },
+  {
+    title: "Software Engineer",
+    employment_type: "Full Time",
+    location: "China",
+    salary: "$50K-$60K",
+    time_remaining: "4 Days Remaining",
+    company_logo: "Apple",
+    apply_link: "#",
+  },
+  {
+    title: "Junior Graphic Designer",
+    employment_type: "Full Time",
+    location: "Canada",
+    salary: "$50K-$70K",
+    time_remaining: "4 Days Remaining",
+    company_logo: "Figma",
+    apply_link: "#",
+  },
+  {
+    title: "Product Designer",
+    employment_type: "Full Time",
+    location: "United States",
+    salary: "$35K-$40K",
+    time_remaining: "4 Days Remaining",
+    company_logo: "Udemy",
+    apply_link: "#",
+  },
+  {
+    title: "Marketing Officer",
+    employment_type: "Internship",
+    location: "Germany",
+    salary: "$50K-$90K",
+    time_remaining: "4 Days Remaining",
+    company_logo: "Facebook",
+    apply_link: "#",
+  },
+  {
+    title: "Interaction Designer",
+    employment_type: "Full Time",
+    location: "France",
+    salary: "$5K-$10K",
+    time_remaining: "4 Days Remaining",
+    company_logo: "Dribbble",
+    apply_link: "#",
+  },
+];
+
+export default featured;
