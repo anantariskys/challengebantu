@@ -25,46 +25,37 @@ const page = () => {
     })
 
   return (
+    <>
     <div className='flex flex-col gap-10'>
 
       {/* Toastify for saved job */}
-      <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick={false}
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-      transition={Flip}
-      />
+      <ToastContainer/>
 
       {/* Header */}
       <div className='flex flex-row justify-between items-center py-[24px] px-[50px] max-sm:px-[20px] bg-[#F1F2F4]'>
-        <div className='font-weight-[500] text-[18px] max-sm:hidden'>
+        <div className='font-weight-[500] text-[18px] max-sm:hidden select-none'>
           Job Details
         </div>
 
         <div>
-          <span className='text-[#767F8C]'> Home / Find Job / </span> Job Details
+          <span className='text-[#767F8C]'> <a href="/">Home</a> / <a href="/job">Find Job</a> / </span> <a href={`/job/${id}`}>Job Details</a>
         </div>
       </div>
 
       {/* Header Title */}
-      <header className='flex flex-row justify-between items-center px-[50px] max-sm:px-[20px] max-md:flex-col max-md:gap-5'>
+      <header className='flex flex-row justify-between items-center px-[50px] max-sm:px-[20px] max-[923px]:flex-col max-md:gap-5'>
         <div className='max-w-[800px] min-h-[96px] flex flex-row gap-8 items-center'>
-          <div className='max-w-[96px] max-h-[96px] max-sm:max-w-[100px] max-sm:max-h-[100px] rounded-full'>
+          <div className='max-w-[96px] max-h-[96px] min-h-[96px] min-w-[96px] max-sm:max-w-[100px] max-sm:max-h-[100px] rounded-full select-none'>
             <img src="/images/sample_icon.png" alt="" />
           </div>
 
           <div className='flex flex-col gap-2 justify-center'>
             <div className='font-weight-[500] text-[24px] max-sm:text-[20px] font-semibold flex flex-row flex-wrap items-center'>
               Senior UX Designer
-              <span className='ml-3 text-[14px] font-w-400 text-[#FF4F4F] bg-[#FFEDED] rounded-[52px] py-[3px] px-[12px]'>Featured</span>
-              <span className='ml-3 text-[14px] font-w-400 text-[#0066FF] bg-[#E8F1FF] rounded-[52px] py-[3px] px-[12px]'>Full Time</span>
+              <div>
+                <span className='ml-3 text-[14px] font-w-400 text-[#FF4F4F] bg-[#FFEDED] rounded-[52px] py-[3px] px-[12px]'>Featured</span>
+                <span className='ml-3 text-[14px] font-w-400 text-[#0066FF] bg-[#E8F1FF] rounded-[52px] py-[3px] px-[12px]'>Full Time</span>
+              </div>
             </div>
 
             <div className='text-[#767F8C] flex flex-row gap-5 max-md:gap-2 flex-wrap'>
@@ -113,7 +104,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className='h-[96px] max-sm:w-[80%] flex flex-col justify-between'>
+        <div className='h-[96px] max-sm:w-[80%] max-[923px]:mt-2 flex flex-col justify-between'>
           {/* button */}
           <div className='flex flex-row gap-3 justify-end'>
             {/* Save job button */}
@@ -129,16 +120,17 @@ const page = () => {
 
             {/* Apply button */}
             <div onClick={ () => {
-                setApplied(!applied)
+                // setApplied(!applied)
                 !applied ? 
                 new swal({
                   title: 'Terms and conditions',
+                  text: 'You are about to apply to Senior UX Designer at Instagram . Please check your information first before you apply to this job.',
                   input: 'checkbox',
                   inputValue: 1,
-                  inputPlaceholder:
-                    'I agree with the terms and conditions',
-                  confirmButtonText:
-                    'Continue <i class="fa fa-arrow-right></i>',
+                  inputPlaceholder: 'I agree with the terms and conditions',
+                  confirmButtonText: 'Continue <i class="fa fa-arrow-right></i>',
+                  showCancelButton: true,
+                  allowOutsideClick: false,
                   inputValidator: function (result) {
                     return new Promise(function (resolve, reject) {
                       if (result) {
@@ -149,16 +141,17 @@ const page = () => {
                     })
                   }
                 }).then(function (result) {
-                  new swal({
-                    type: 'success',
-                    text: 'You agreed with T&C :)'
-                  })
-                })
-                : ''
-                	
+                  if (result.isConfirmed) {
+                    new swal({
+                      type: 'success',
+                      text: 'You agreed with T&C :)'
+                    }).then(() => setApplied(!applied))
+                  }
+                }) : '';
+                applied === true ? setApplied(false) : ''
               }} 
-              className={`rounded-[4px] ${!applied ? 'bg-[#042852]' : 'bg-[#8a8a8a]'} py-[16px] px-[36px]  cursor-pointer group max-sm:w-full`}>
-              <span className={`text-white flex flex-row max-sm:justify-end gap-3 ${!applied ? 'group-hover:ease-in-out hover:translate-1 hover:scale-110' : ''} `}>
+              className={`rounded-[4px] ${!applied ? 'bg-[#042852]' : 'bg-[#8a8a8a]'} py-[16px] px-[36px] min-w-[192.25]  cursor-pointer group max-sm:w-full`}>
+              <span className={`text-white select-none flex flex-row max-sm:justify-end gap-3 ${!applied ? 'group-hover:ease-in-out hover:translate-1 hover:scale-110' : ''} `}>
                 { applied ? 'Applied' : 'Apply Now' }
 
                 { !applied && 
@@ -180,7 +173,7 @@ const page = () => {
       </header>
 
       {/* Body */}
-      <div className='w-full flex flex-row px-[50px] max-sm:px-[20px] gap-10 max-md:-mt-7 max-md:flex-col'>
+      <div className='w-full flex flex-row px-[50px] max-sm:px-[20px] gap-10 max-md:-mt-0  max-md:flex-col'>
         {/* Job description */}
         <section className='w-full'>
           <div className='flex flex-col gap-5'>
@@ -220,6 +213,8 @@ const page = () => {
         </section>
       </div>
     </div>
+                
+  </>
   )
 }
 
