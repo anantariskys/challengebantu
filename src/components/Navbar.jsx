@@ -8,7 +8,7 @@ const Navbar = () => {
   const [navbarIsopen, setNavbarIsOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <nav className="bg-[#f1f2f4] z-50 sticky top-0 px-4 py-2 md:p-4">
+    <nav className={`bg-[#f1f2f4] z-50 sticky top-0 px-4 py-2 md:p-4`}>
       <div className="flex justify-between items-center container">
         <Icon icon="material-symbols:menu" className="size-8 md:hidden" onClick={() => setNavbarIsOpen((prev) => !prev)} />
         <div className={`absolute ${navbarIsopen ? "left-0" : "-left-full"} top-full bg-[#f1f2f4] min-h-screen pt-3 px-4 transition-all duration-200 md:static md:min-h-fit md:p-0`}>
