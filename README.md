@@ -73,7 +73,7 @@ Example value type:
 Example response:
 
 ```
-{
+[{
     createdAt : "2025-02-20T02:52:21.214Z"
     name : "Customer Security Coordinator"
     location : "Guinea"
@@ -95,7 +95,8 @@ Example response:
     organization_type : false
     salary : "39.83"
     id : "1"
-}
+}, ...
+]
 ```
 
 ## Search Feature & FIlter
