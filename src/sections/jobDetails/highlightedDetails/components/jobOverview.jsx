@@ -86,7 +86,7 @@ const JobOverview = ({ jobDataId }) => {
                     </svg>
                     
                     <p className='text-[#767F8C] mt-3'>JOB TYPE:</p>
-                    <p className='mt-1'>{ jobDataId.job_type }</p>
+                    <p className='mt-1'>{ Number(jobDataId.id) % 5 === 0 ? 'Contract' : Number(jobDataId.id) % 4 === 0 ? 'Remote' : Number(jobDataId.id) % 3 === 0 ? 'Intern' : Number(jobDataId.id) % 2 === 0 ? 'Full Time' : 'Freelance'  }</p>
                     </div>
                     {/* Location */}
                     <div className='min-w-[78px] max-w-[78px]'>
