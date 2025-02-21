@@ -1,3 +1,5 @@
+"use client"
+
 import CTA from "@/sections/home/cta";
 import FeaturedJob from "@/sections/home/featured";
 import Hero from "@/sections/home/hero";
