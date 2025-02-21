@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Developer Internship Challenge
 
-## Getting Started
+## Screenshot
 
-First, run the development server:
+### 1. Landing Page
+<img src="./public/landing_page.png" >
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 2. Find Job Page
+<img src="./public/find_job.png" >
+
+### 3. Detail Job Page by Id
+<img src="./public/detail_job.png" >
+
+## API Dummy Integration
+
+baseURL: 
+```
+"https://67b13a313fc4eef538e9667f.mockapi.io/api"
+```
+getAllJob:
+```
+"https://67b13a313fc4eef538e9667f.mockapi.io/api/job"
+```
+getJobById: 
+```
+"https://67b13a313fc4eef538e9667f.mockapi.io/api/job/id"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Example value type:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Status 200 OK
+```
+{
+    createdAt : "string"
+    name : "string"
+    location : "string"
+    category :"string"
+    company : "string"
+    description : "string"
+    area : "string"
+    responsibility : "string"
+    job_type : "string"
+    experience : "number"
+    expired_at : "string"
+    url : "string"
+    telephone_number : "string"
+    email : "string"
+    image : "string"
+    founded_in : "string"
+    company_size : "number"
+    education : "boolean" 
+    organization_type : "boolean"
+    salary : "string"
+    id : "string"
+}
+```
+Example response:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+[{
+    createdAt : "2025-02-20T02:52:21.214Z"
+    name : "Customer Security Coordinator"
+    location : "Guinea"
+    category :"Automotive"
+    company : "Ankunding - Corwin"
+    description : "Id reiciendis laboriosam dolorem eos facilis. Porro sint dolorem praesentium et. Nemo eaque at atque similique eius odio eos reiciendis.\nBeatae sed accusantium minima voluptate laboriosam nostrum. Veniam nulla aut quia voluptatum officia non necessitatibus quod. Laboriosam numquam unde assumenda corporis aperiam laudantium maxime magnam. Non consectetur fugit dolore. Asperiores voluptate numquam.\nSuscipit labore debitis ea animi odio ad modi. Animi hic quos facere consequatur quos. Quibusdam et nemo similique accusamus minus. Nostrum harum vitae similique temporibus nobis aspernatur enim."
+    area : "Communications"
+    responsibility : "Necessitatibus nisi blanditiis optio ea sapiente iure commodi odit. Ullam itaque eum repudiandae ea aperiam perspiciatis unde ducimus cumque. Unde sit harum fugit earum eos saepe vitae beatae fugit. Dolor tempora consequuntur nisi accusantium."
+    job_type : "Agent"
+    experience : 60
+    expired_at : "2025-07-09T11:31:59.355Z"
+    url : "http://perfumed-lap.name"
+    telephone_number : "226-445-8018 x666"
+    email : "Marianne1@hotmail.com"
+    image : "https://loremflickr.com/640/480/business"
+    founded_in : "1959-01-25T04:44:18.511Z"
+    company_size : 64324
+    education : false 
+    organization_type : false
+    salary : "39.83"
+    id : "1"
+}, ...
+]
+```
 
-## Learn More
+## Search Feature & FIlter
 
-To learn more about Next.js, take a look at the following resources:
+ongoing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img src="./public/" >
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="right">(<a href="#top">back to top</a>)</p>
