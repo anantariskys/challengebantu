@@ -19,7 +19,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href={"/job"} className={`${pathname === "/jobs" ? "text-blue-500" : ""}`}>
+              <Link href={"/job"} className={`${pathname === "/job" ? "text-blue-500" : ""}`}>
                 Find Job
               </Link>
             </li>
