@@ -37,7 +37,7 @@ const Header = ({ jobDataId, formatDate }) => {
                   </div>
                 </div>
 
-                <div className="text-[#767F8C] flex flex-row gap-5 max-md:gap-2 flex-wrap">
+                <div className="text-[#767F8C] flex flex-row gap-2 max-md:gap-2 flex-wrap">
                   {/* URL company */}
                   <div className="flex flex-row gap-1 text-[16px] max-sm:text-[14px] text-[#474C54]">
                     <span>
@@ -174,7 +174,7 @@ const Header = ({ jobDataId, formatDate }) => {
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className={`group-hover:fill-[#E7F0FA] ${
+                      className={`group-hover:${ saved ? 'fill-[#0A65CC]' : 'fill-[#E7F0FA]'} ${
                         saved ? "fill-[#0A65CC]" : ""
                       } duration-150 delay-150`}
                     />
@@ -219,7 +219,7 @@ const Header = ({ jobDataId, formatDate }) => {
                   }}
                   className={`rounded-[4px] ${
                     !applied ? "bg-[#042852]" : "bg-[#8a8a8a]"
-                  } py-[16px] px-[36px] min-w-[192.25]  cursor-pointer group max-sm:w-full`}
+                  } py-[16px] px-[36px] min-w-[192.25px]  cursor-pointer group max-sm:w-full`}
                 >
                   <span
                     className={`text-white select-none flex flex-row max-sm:justify-end gap-3 ${
