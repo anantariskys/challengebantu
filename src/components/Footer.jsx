@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="grid grid-cols-1 md:grid-cols-4 gap-1">
       {/* MyJob Section */}
       <div>
-        <h3 className="flex text-xl font-semibold mb-4"><Icon icon="tabler:briefcase" className="mr-3 w-8 h-8"/> MyJob</h3>
+        <h3 className="flex text-xl font-semibold mb-4"><Icon icon="tabler:briefcase" className="mr-3 w-8 h-8"/> Bantu</h3>
         <p className="text-sm text-gray-400 mt-2">Call now: <span className='font-semibold text-white mt-2'>(319) 555-0116</span></p>
         <p className="text-sm text-gray-400">6391 Elgin St. Celina, Delaware 10299, New <br/>
           York, United States of America</p>
