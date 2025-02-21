@@ -7,9 +7,8 @@ import { getJobById } from "@/api/services/job";
 import LoadingDetail from "@/components/loadingSkeleton";
 import Breadcrumbs from "@/sections/jobDetails/breadcrumbs";
 import Header from "@/sections/jobDetails/header";
-import JobDescription from "@/sections/jobDetails/jobDescription";
-import HighlightedDetails from "@/sections/jobDetails/highlightedDetails";
 import NotFoundJob from "@/sections/jobDetails/notFoundJob";
+import MainBody from "@/sections/jobDetails/mainBody";
 
 const page = () => {
   const { id } = useParams();
@@ -28,7 +27,7 @@ const page = () => {
         setLoading(false);
       }
     };
-    id !== 'id' ?  fetchJobDetail() : <NotFoundJob /> && setLoading(false);
+    id !== 'id' ? fetchJobDetail() : <NotFoundJob /> && setLoading(false);
   }, [id]);
 
   const formatDate = (dateString) => {
@@ -50,10 +49,7 @@ const page = () => {
           <ToastContainer />
           <Breadcrumbs id={id} />
           <Header jobDataId={jobDataId} formatDate={formatDate} />
-          <main className="container mx-auto w-full flex flex-row max-md:px-[20px] gap-10 max-[1018px]:-mt-3 max-[1018px]:flex-col">
-            <JobDescription jobDataId={jobDataId} />
-            <HighlightedDetails jobDataId={jobDataId} formatDate={formatDate} />
-          </main>
+          <MainBody jobDataId={jobDataId} formatDate={formatDate} />
         </div>
 
         <div className="container mx-auto py-8">
