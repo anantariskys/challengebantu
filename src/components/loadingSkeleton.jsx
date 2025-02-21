@@ -1,6 +1,6 @@
 export default function LoadingDetail() {
     return (
-      <div className="container mx-auto w-full rounded-md p-4">
+      <div className="container mx-auto w-[80%] rounded-md p-4">
         <div className="flex flex-col animate-pulse space-x-4">
             <div className="flex flex-row space-x-4">
                 <div className="size-20 rounded-full bg-gray-200"></div>
