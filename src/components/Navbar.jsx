@@ -43,7 +43,7 @@ const Navbar = () => {
             <p>+1-202-555-0178</p>
           </div>
           <div className="hidden lg:flex items-center gap-2">
-            <img src="image1.png" alt="img" />
+            <img src="/image1.png" alt="img" />
             <p>English</p>
             <Icon icon={"mdi:chevron-down"} />
           </div>
