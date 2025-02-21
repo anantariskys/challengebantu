@@ -42,8 +42,9 @@ const page = () => {
 
   return (
     <>
-      { loading && <LoadingDetail />}
-      { !loading && jobDataId ? (
+      { loading ?  ( 
+        <LoadingDetail />
+      ) : jobDataId ? (
       <>
         <div className="flex flex-col gap-10 -mt-10">
           <ToastContainer />
