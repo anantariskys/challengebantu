@@ -83,10 +83,30 @@ Example response:
 ]
 ```
 
-## Search Feature & FIlter
+## Search Feature & Filter
 
-ongoing
+### Search Feature
 
-<img src="./public/" >
+1. Global Search
+   
+<img src="./public/global_search.png">
+
+2. Search by keyword job title
+
+<img src="./public/search1.png">
+
+3. Specific search by keyword job title and category
+
+<img src="./public/search2.png">
+
+### Filter
+
+1. Filter sort
+
+<img src="./public/filter1.png">
+
+2. Filter showing items per page
+
+<img src="./public/filter2.png">
 
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -151,9 +151,9 @@ const SearchSection = () => {
           </div>
         </div>
       </div>
-      <div className="hidden md:flex md:items-center md:gap-2">
-        <Icon icon={"mdi:bell-outline"} className="size-6" />
-        <img src="/user.png" alt="user" className="md:size-8 lg:size-12" />
+      <div className="hidden md:flex md:items-center md:gap-5">
+        <Icon icon={"mdi:bell-outline"} className="size-6 cursor-pointer" />
+        <img src="/user.png" alt="user" className="md:size-8 lg:size-12 cursor-pointer" />
       </div>
     </div>
   );
