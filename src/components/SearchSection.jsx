@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { getAllJob } from "@/api/services/job";
+import { useRouter } from "next/navigation";
 
 const SearchSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,6 +15,7 @@ const SearchSection = () => {
   const [locations, setLocations] = useState(["All"]);
   const dropdownRef = useRef(null);
   const searchRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -38,7 +40,6 @@ const SearchSection = () => {
         job.category.toLowerCase().includes(searchTerm.toLowerCase())
       );
       
-      // Filter berdasarkan lokasi yang dipilih
       if (selectedLocation !== "All") {
         filtered = filtered.filter(job => 
           job.location === selectedLocation
@@ -53,7 +54,6 @@ const SearchSection = () => {
     }
   }, [searchTerm, jobs, selectedLocation]);
 
-  // Handle click outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -77,6 +77,7 @@ const SearchSection = () => {
   const handleJobSelect = (job) => {
     setSearchTerm(job.name);
     setShowSearchDropdown(false);
+    router.push(`/job/${job.id}`);
   };
 
   const handleLocationChange = (location) => {
@@ -94,7 +95,7 @@ const SearchSection = () => {
           </div>
         </a>
         <div className="flex items-center border p-2 rounded-md gap-1 md:p-4 lg:gap-4 lg:px-6 lg:w-[668px] relative">
-          <div className="w-auto flex items-center gap-1 cursor-pointer">
+          <div className="w-auto flex flex-row justify-center items-center gap-1 cursor-pointer">
             <img src="/earth.svg" alt="flag" className="w-4 md:w-6" />
             <div 
             onClick={() => setShowLocationDropdown(!showLocationDropdown)}

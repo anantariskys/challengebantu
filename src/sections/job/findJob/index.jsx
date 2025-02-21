@@ -58,7 +58,7 @@ const FindJobSection = ({ onSearch }) => {
             <Icon icon={"mingcute:search-line"} className="text-blue-500 lg:size-6" />
             <input 
               type="text" 
-              placeholder="Job title, Keyword..." 
+              placeholder="Job title, type, Keyword..." 
               value={jobTitle}
               onChange={(e) => setJobTitle(e.target.value)}
               className="focus:outline-none text-xs w-20 md:w-full lg:text-base" 

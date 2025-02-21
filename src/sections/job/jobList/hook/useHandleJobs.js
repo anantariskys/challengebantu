@@ -26,9 +26,19 @@ export const useHandleJobs = () => {
     let result = allJob;
 
     if (searchParams?.jobTitle) {
-      result = result.filter(job => 
-        job.name.toLowerCase().includes(searchParams.jobTitle.toLowerCase())
-      );
+      result = result.filter(job => {
+        const jobType = Number(job.id) % 5 === 0 ? 'Contract' : 
+                       Number(job.id) % 4 === 0 ? 'Remote' : 
+                       Number(job.id) % 3 === 0 ? 'Intern' : 
+                       Number(job.id) % 2 === 0 ? 'Full Time' : 'Freelance';
+        
+        const searchTerm = searchParams.jobTitle.toLowerCase();
+        
+        return (
+          job.name.toLowerCase().includes(searchTerm) ||
+          jobType.toLowerCase().includes(searchTerm)
+        );
+      });
     }
 
     if (searchParams?.location) {
