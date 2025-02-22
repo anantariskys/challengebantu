@@ -11,7 +11,7 @@ const Button = ({
 }) => {
 
   const variants = {
-    primary: "bg-[#0A65CC] text-white hover:bg-blue-600",
+    primary: "bg-primary text-white ",
     secondary:"bg-[#E7F0FA] text-primary hover:bg-primary hover:text-[#E7F0FA]",
     tertiary:"bg-white text-primary ",
     "primary-outline":"",
