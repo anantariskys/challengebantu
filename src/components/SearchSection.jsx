@@ -82,7 +82,7 @@ const SearchSection = () => {
 
   const handleLocationChange = (location) => {
     setSelectedLocation(location);
-    setSearchTerm(""); // Reset search term
+    setSearchTerm(""); 
   };
 
   return (
@@ -90,7 +90,7 @@ const SearchSection = () => {
       <div className="flex items-center gap-1 md:gap-4">
         <a href="/">
           <div className="flex items-center gap-1">
-            <Icon icon={"tabler:briefcase"} className="text-blue-500 size-6 md:size-10" />
+            <Icon icon={"tabler:briefcase"} className="text-primary size-6 md:size-10" />
             <h1 className="font-bold md:text-xl">Bantu</h1>
           </div>
         </a>
@@ -103,7 +103,7 @@ const SearchSection = () => {
               <p className="font-semibold text-xs md:text-sm">
                 {selectedLocation}
               </p>
-              <Icon icon={"mdi:chevron-down"} className="lg:size-6 border-r" />
+              <Icon icon={"mdi:chevron-down"} className="lg:size-6 text-primary border-r" />
               {showLocationDropdown && (
                 <div className="absolute bg-white shadow-lg rounded-sm mt-10 -ml-10 z-50 max-h-60 overflow-y-auto">
                   {locations.map((location, index) => (
@@ -123,7 +123,7 @@ const SearchSection = () => {
             </div>
           </div>
           <div className="flex items-center w-full relative pl-3" ref={searchRef}>
-            <Icon icon={"mingcute:search-line"} className="text-blue-500 lg:size-6" />
+            <Icon icon={"mingcute:search-line"} className="text-primary lg:size-6" />
             <input 
               type="text" 
               placeholder="Job title, keyword, company" 

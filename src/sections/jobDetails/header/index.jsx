@@ -28,11 +28,15 @@ const Header = ({ jobDataId, formatDate }) => {
                 <div className="font-weight-[500] text-[24px] max-sm:text-[20px] font-semibold flex flex-row flex-wrap items-center">
                   { jobDataId.name }
                   <div>
+                    {
+                      jobDataId.isFeatured && (
                     <span className="ml-3 text-[14px] font-w-400 text-[#FF4F4F] bg-[#FFEDED] rounded-[52px] py-[3px] px-[12px]">
                       Featured
                     </span>
+                      )
+                    }
                     <span className="ml-3 text-[14px] font-w-400 text-[#0066FF] bg-[#E8F1FF] rounded-[52px] py-[3px] px-[12px]">
-                      Full Time
+                    { Number(jobDataId.id) % 5 === 0 ? 'Contract' : Number(jobDataId.id) % 4 === 0 ? 'Remote' : Number(jobDataId.id) % 3 === 0 ? 'Intern' : Number(jobDataId.id) % 2 === 0 ? 'Full Time' : 'Freelance'  }
                     </span>
                   </div>
                 </div>
