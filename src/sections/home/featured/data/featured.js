@@ -5,7 +5,7 @@ const featured = [
     location: "Australia",
     salary: "$30K-$35K",
     time_remaining: "4 Days Remaining",
-    company_logo: "Upwork",
+    company_logo: "upwork",
     apply_link: "#",
   },
   {
@@ -14,7 +14,7 @@ const featured = [
     location: "China",
     salary: "$50K-$60K",
     time_remaining: "4 Days Remaining",
-    company_logo: "Apple",
+    company_logo: "apple",
     apply_link: "#",
   },
   {
@@ -23,7 +23,7 @@ const featured = [
     location: "Canada",
     salary: "$50K-$70K",
     time_remaining: "4 Days Remaining",
-    company_logo: "Figma",
+    company_logo: "figma",
     apply_link: "#",
   },
   {
@@ -32,7 +32,7 @@ const featured = [
     location: "United States",
     salary: "$35K-$40K",
     time_remaining: "4 Days Remaining",
-    company_logo: "Udemy",
+    company_logo: "udemy",
     apply_link: "#",
   },
   {
@@ -41,7 +41,7 @@ const featured = [
     location: "Germany",
     salary: "$50K-$90K",
     time_remaining: "4 Days Remaining",
-    company_logo: "Facebook",
+    company_logo: "facebook",
     apply_link: "#",
   },
   {
@@ -50,7 +50,7 @@ const featured = [
     location: "France",
     salary: "$5K-$10K",
     time_remaining: "4 Days Remaining",
-    company_logo: "Dribbble",
+    company_logo: "dribble",
     apply_link: "#",
   },
 ];
