@@ -5,11 +5,11 @@ const CompanyDetail = ({ jobDataId, formatDate }) => {
         <>
             <div className='w-full h-[438px] border border-[#E7F0FA] rounded-[8px] p-[32px]'>
                 <div className='flex gap-5'>
-                    <img src={ jobDataId.image } alt={ `logo ${jobDataId.name}` } className='max-w-[64px] max-h-[64px] rounded-md' />
+                    <img src={ jobDataId.image } alt={ `logo ${jobDataId.company}` } className='max-w-[64px] max-h-[64px] rounded-md' />
 
                     <div className='flex flex-col gap-2 '>
                         <p className='text-[20px] text-[#18191C]'>
-                            { jobDataId.name }
+                            { jobDataId.company }
                         </p>
                         <p className='text-[14px] text-[#767F8C]'>
                             { jobDataId.category }

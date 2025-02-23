@@ -192,7 +192,7 @@ const Header = ({ jobDataId, formatDate }) => {
                     !applied
                       ? new swal({
                           title: "Terms and conditions",
-                          text: "You are about to apply to Senior UX Designer at Instagram . Please check your information first before you apply to this job.",
+                          text: `You are about to apply to ${jobDataId.name} at ${jobDataId.company} . Please check your information first before you apply to this job.`,
                           input: "checkbox",
                           inputValue: 1,
                           inputPlaceholder:
